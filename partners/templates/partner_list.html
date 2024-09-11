@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner List</title>
+</head>
+<body>
+    <h1>Partners</h1>
+    <form method="get">
+        <input type="text" name="search" placeholder="Search partners" value="{{ request.GET.search }}">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for partner in partners %}
+        <li><a href="{% url 'partner_detail' partner.pk %}">{{ partner.name }}</a> | <a href="{% url 'edit_partner' partner.pk %}">Edit</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_partner' %}">Add New Partner</a>
+</body>
+</html>

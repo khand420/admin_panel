@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner Details</title>
+</head>
+<body>
+    <h1>{{ partner.name }}</h1>
+    <p>Contact Info: {{ partner.contact_info }}</p>
+    <a href="{% url 'edit_partner' partner.pk %}">Edit</a>
+</body>
+</html>
